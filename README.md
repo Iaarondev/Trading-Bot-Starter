@@ -1,30 +1,98 @@
-# Grid Trading Bot Setup Scripts
+# Grid Trading Bot Template
 
-This directory contains modular scripts for setting up different components
-of the Grid Trading Bot project.
+A modular, extensible cryptocurrency grid trading bot template with built-in safety features and exchange integrations.
 
-## Available Scripts
+## Features
 
-- `setup.sh`: Main setup script that runs everything
-- `create_core.sh`: Creates core trading components
-- `create_database.sh`: Creates database components
-- `create_docs.sh`: Creates documentation
-- `create_examples.sh`: Creates example files
-- `create_tests.sh`: Creates test files
-- `common.sh`: Shared utilities used by other scripts
+- Modular architecture for easy customization
+- Multiple exchange support (Coinbase, Binance)
+- Grid trading strategy implementation
+- Risk management and position tracking
+- Database integration with PostgreSQL
+- Docker support for deployment
+- Comprehensive testing setup
+- CI/CD with GitHub Actions
 
-## Usage
+## Quick Start
 
-To set up the entire project:
 ```bash
-./setup.sh [project_name]
+# Clone repository
+git clone [your-repo-url]
+
+# Run setup script
+./setup.sh my_trading_bot
+
+# Configure settings
+cp .env.example .env
+nano .env
+
+# Start with Docker
+docker-compose up -d
 ```
 
-To set up individual components:
-```bash
-./create_core.sh [project_name]
-./create_database.sh [project_name]
-./create_docs.sh [project_name]
-./create_examples.sh [project_name]
-./create_tests.sh [project_name]
+## Project Structure
+
 ```
+grid_trading/
+├── core/          # Core interfaces and base classes
+├── exchanges/     # Exchange implementations
+├── strategies/    # Trading strategies
+├── database/     # Database models and operations
+├── utils/        # Utility functions
+└── monitoring/   # Performance metrics
+```
+
+## Setup Scripts
+
+`setup.sh [project_name] [options]`
+- `--force`: Override existing directory
+- `--minimal`: Create minimal setup
+
+Individual component scripts:
+- `create_core.sh`: Trading interfaces
+- `create_database.sh`: Database setup
+- `create_exchanges.sh`: Exchange implementations
+- `create_strategies.sh`: Trading strategies
+- `create_utils.sh`: Utility functions
+- `create_monitoring.sh`: Metrics collection
+
+## Development
+
+```bash
+# Create virtual environment
+python -m venv venv
+source venv/bin/activate
+
+# Install dependencies
+pip install -r requirements.txt
+
+# Run tests
+pytest tests/
+```
+
+## Safety Features
+
+- API rate limiting
+- Position size limits
+- Error handling & recovery
+- Transaction logging
+- Performance monitoring
+
+## Contributing
+
+1. Fork repository
+2. Create feature branch
+3. Implement changes
+4. Add tests
+5. Submit PR
+
+## License
+
+MIT
+
+## Security
+
+- Never commit API keys
+- Use environment variables
+- Implement position limits
+- Enable monitoring alerts
