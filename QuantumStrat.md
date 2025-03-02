@@ -205,4 +205,3 @@ Feel free to fork and contribute! Suggestions and improvements welcome.
 
 ---
 
-*Now your project has an informative README, structured implementation plan, and initial example code clearly aligned with your quantum-inspired ZKP principles!*
